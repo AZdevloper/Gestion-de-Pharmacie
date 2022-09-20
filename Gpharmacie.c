@@ -125,6 +125,28 @@ void orderDecroissantPrix()
     }
 }
 
+void listerTousProduits()
+{
+    int c;
+    printf(" entrez -1- pour lister tous les produits selon l ordre alphabétique  croissant du nom.: \n");
+    printf(" entrez -2- pour lister tous les produits selon l ordre  décroissant du prix. :\n   ");
+    scanf("%d", &c);
+
+    switch (c)
+    {
+    case 1:
+        ordreAlphabetiqueCroissant();
+        break;
+
+    case 2:
+        orderDecroissantPrix();
+        break;
+
+    default:
+        break;
+    }
+}
+
 void Menu()
 {
     int n, code, qauntite;
