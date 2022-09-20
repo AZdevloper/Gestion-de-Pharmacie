@@ -158,6 +158,28 @@ void listerTousProduits()
     }
 }
 
+void acheterProduit(int quantite, int code)
+{
+    int s = 0, now, i;
+
+    for (i = 0; i < quantite; i++)
+    {
+        if (Prdt[i].code == code)
+        {
+            Prdt[i].quantite -= quantite;
+            break;
+        }
+    }
+    time(&now);
+    strcpy(PrdtAcheter[countPrdtAchter].dateAchat, ctime(&now));
+
+    PrdtAcheter[countPrdtAchter].prixTTC = Prdt[i].prixTTC;
+
+    PrdtAcheter[countPrdtAchter].prix = Prdt[i].prix;
+
+    ++countPrdtAchter;
+}
+
 
 
 
