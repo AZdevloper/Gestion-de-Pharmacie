@@ -13,8 +13,24 @@ typedef struct produit
 
 } produit;
 produit Prdt[100];
-
 int nomberDesProduit = 0;
+void Retour()
+{
+    int c;
+
+    printf("\n 1:retur au menu\n  clic sur une boutton pour quitter le programme\n");
+    scanf("%d", &c);
+
+    switch (c)
+    {
+    case 1:
+        main();
+        break;
+
+    default:
+        printf("vous avez quitter le programme");
+    }
+}
 void Menu()
 {
     int n, code, qauntite;
