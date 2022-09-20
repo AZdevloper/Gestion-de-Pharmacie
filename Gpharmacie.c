@@ -95,6 +95,36 @@ void ordreAlphabetiqueCroissant()
     }
 }
 
+void orderDecroissantPrix()
+{
+
+    produit t;
+    int i, k;
+
+    for (i = 0; i < nomberDesProduit; i++)
+    {
+        for (k = 0; k <= nomberDesProduit - i - 1; k++)
+        {
+            if (Prdt[k].prix < Prdt[k + 1].prix)
+
+            {
+                t = Prdt[k];
+
+                Prdt[k] = Prdt[k + 1];
+
+                Prdt[k + 1] = t;
+            }
+        }
+    }
+
+    printf("les medecament son :");
+    for (int f = 0; f < nomberDesProduit; f++)
+    {
+
+        printf("\n nom : %s   prix : %f   code: %d   quantite : %d prixTTC : %f   ", Prdt[f].nom, Prdt[f].prix, Prdt[f].code, Prdt[f].quantite, Prdt[f].prixTTC);
+    }
+}
+
 void Menu()
 {
     int n, code, qauntite;
