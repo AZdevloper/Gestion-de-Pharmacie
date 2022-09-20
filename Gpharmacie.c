@@ -254,6 +254,74 @@ void etatStock()
 
 }
 
+void alimenterStock(int code, int quantite)
+{
+
+    int s;
+    for (int i = 0; i < nomberDesProduit; i++)
+    {
+        if (Prdt[i].code == code)
+        {
+
+            Prdt[i].quantite = quantite;
+            printf(" la quantite est alimenter  ");
+        }
+        else
+            s++;
+    }
+    if (s == nomberDesProduit)
+    {
+        printf("ce code ne ce trouve pas donne le stock ? \n");
+        printf("  tu peu ajouter comme un neuvaux produit ");
+    }
+}
+
+void supprimerProduits(int code)
+{
+    printf("avant supremer :%d", nomberDesProduit);
+    for (int f = 0; f < nomberDesProduit; f++)
+    {
+
+        printf("\n nom : %s   prix : %f   code: %d   quantite : %d prixTTC : %f  \n ", Prdt[f].nom, Prdt[f].prix, Prdt[f].code, Prdt[f].quantite, Prdt[f].prixTTC);
+    }
+
+    int s = 0;
+
+    for (int i = 0; i < nomberDesProduit; i++)
+    {
+        if (Prdt[i].code == code)
+        {
+            for (int j = i; j < nomberDesProduit; j++)
+            {
+                Prdt[j] = Prdt[j + 1];
+            }
+            --nomberDesProduit;
+        }
+        else
+            ++s;
+    }
+    if (s == nomberDesProduit)
+    {
+        printf(" pas de produit avec ce code  \n");
+    }
+
+    printf("aprer supremer :%d \n", nomberDesProduit);
+
+    for (int f = 0; f < nomberDesProduit; f++)
+    {
+
+        printf("\n nom : %s   prix : %f   code: %d   quantite : %d prixTTC : %f  \n ", Prdt[f].nom, Prdt[f].prix, Prdt[f].code, Prdt[f].quantite, Prdt[f].prixTTC);
+    }
+}
+void totalPrixProduits()
+{
+    float s = 0;
+    for (int i = 0; i < countPrdtAchter; i++)
+    {
+        s += PrdtAcheter[i].prix;
+    }
+    printf("Totale des prix des produit est %f DH ", s);
+}
 
 void Menu()
 {
