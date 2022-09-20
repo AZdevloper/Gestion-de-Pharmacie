@@ -34,6 +34,19 @@ void ajouterUnProurduit()
 
     nomberDesProduit++;
 }
+
+void ajouterPlusieursProduits()
+{
+
+    int n;
+    printf(" donnez nomber des produit:");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        ajouterUnProurduit();
+    }
+}
+
 void Retour()
 {
     int c;
