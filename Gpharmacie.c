@@ -323,6 +323,62 @@ void totalPrixProduits()
     printf("Totale des prix des produit est %f DH ", s);
 }
 
+void moyennePrixProduits()
+{
+    float s = 0;
+    for (int i = 0; i < countPrdtAchter; i++)
+    {
+        s += PrdtAcheter[i].prix;
+    }
+
+    printf("moyenne des prix des produits vendus en journee courante : %f DH ", s / countPrdtAchter);
+}
+void MaxPrixProduits()
+{
+    float s = 0, max = PrdtAcheter[0].prix, min = PrdtAcheter[0].prix;
+    for (int i = 0; i < countPrdtAchter; i++)
+    {
+        if (max < PrdtAcheter[i].prix)
+        {
+
+            max = PrdtAcheter[i].prix;
+        }   
+    }
+
+    printf("max pris des produit est %f DH", max);
+}
+void statistiqueVente()
+{
+    int n;
+    printf("    taper 1 pour : Afficher le total des prix des produits vendus en journée courante \n");
+    printf("    taper 2 pour : Afficher la moyenne des prix des produits vendus en journée courante\n");
+    printf("    taper 3 pour : Afficher le Max des prix des produits vendus en journée courante\n");
+    printf("    taper 4 pour : Afficher le Min des prix des produits vendus en journée courante\n : ");
+    scanf("%d", &n);
+
+    switch (n)
+    {
+    case 1:
+        totalPrixProduits();
+
+        break;
+    case 2:
+        moyennePrixProduits();
+
+        break;
+    case 3:
+        MaxPrixProduits();
+
+        break;
+    case 4:
+        MinPrixProduits();
+
+        break;
+    default:
+        break;
+    }
+}
+
 void Menu()
 {
     int n, code, qauntite;
