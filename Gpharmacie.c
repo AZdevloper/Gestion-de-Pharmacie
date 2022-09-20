@@ -200,6 +200,22 @@ void rechercherProduitsCode(int code)
 }
 
 
+void rechercherProduitsquantite(int quan)
+{
+    int s=0, q;
+    for (int i = 0; i < nomberDesProduit; i++)
+    {
+        if (Prdt[i].quantite == quan)
+        {
+            printf("\n nom : %s   prix : %f   code: %d   quantite : %d prixTTC : %f   ", Prdt[i].nom, Prdt[i].prix, Prdt[i].code, Prdt[i].quantite, Prdt[i].prixTTC);
+        }
+        else
+            s++;
+    }
+    if (s == nomberDesProduit)
+        printf("cette quantite ne ce trouve pas donne le stock ? ");
+}
+
 void Menu()
 {
     int n, code, qauntite;
