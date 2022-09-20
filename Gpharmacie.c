@@ -2,6 +2,17 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+typedef struct produitAchet
+{
+    float prixTTC;
+    int prix;
+    char dateAchat[100];
+
+} prdacheter;
+
+prdacheter PrdtAcheter[100];
+int countPrdtAchter = 0;
+
 // struct produit
 typedef struct produit
 {
@@ -146,6 +157,9 @@ void listerTousProduits()
         break;
     }
 }
+
+
+
 
 void Menu()
 {
