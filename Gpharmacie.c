@@ -64,6 +64,37 @@ void Retour()
         printf("vous avez quitter le programme");
     }
 }
+
+void ordreAlphabetiqueCroissant()
+{
+
+    produit t;
+    int i, k;
+
+    for (i = 0; i < nomberDesProduit; i++)
+    {
+        for (k = 0; k <= nomberDesProduit - i - 1; k++)
+        {
+            if (strcmp(Prdt[k].nom, Prdt[k + 1].nom) > 0)
+
+            {
+                t = Prdt[k];
+
+                Prdt[k] = Prdt[k + 1];
+
+                Prdt[k + 1] = t;
+            }
+        }
+    }
+    printf("les medecament son :");
+
+    for (int f = 1; f <= nomberDesProduit; f++)
+    {
+
+        printf("\n nom : %s   prix : %f   code: % d   quantite : %d prixTTC : %f  \n ", Prdt[f].nom, Prdt[f].prix, Prdt[f].code, Prdt[f].quantite, Prdt[f].prixTTC);
+    }
+}
+
 void Menu()
 {
     int n, code, qauntite;
