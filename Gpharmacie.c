@@ -215,6 +215,45 @@ void rechercherProduitsquantite(int quan)
     if (s == nomberDesProduit)
         printf("cette quantite ne ce trouve pas donne le stock ? ");
 }
+void recherchPrduit()
+{
+    int c, code, quan;
+    printf("  recherche produit par code taper 1 : \n  recherche produit par quantite taper 2 :\n  ");
+    scanf(" %d", &c);
+    switch (c)
+    {
+    case 1:
+        printf("donnez le code de produit :\n");
+        scanf("  %d", &code);
+        rechercherProduitsCode(code);
+
+        break;
+    case 2:
+        printf("donnez la quantite de produit :\n");
+        scanf("  %d", &quan);
+        rechercherProduitsquantite(quan);
+
+    default:
+        break;
+    }
+}
+
+void etatStock()
+{  int s=0;
+    for (int i = 0; i < nomberDesProduit; i++)
+    {
+        if (Prdt[i].quantite < 3)
+        {
+            s++;
+            printf("\n nom : %s   prix : %f DH  code: %d   quantite : %d prixTTC : %f DH  ", Prdt[i].nom, Prdt[i].prix, Prdt[i].code, Prdt[i].quantite, Prdt[i].prixTTC);
+        }
+
+    }
+    if(s == 0)
+       printf("pas de manque dans le stock");
+
+}
+
 
 void Menu()
 {
