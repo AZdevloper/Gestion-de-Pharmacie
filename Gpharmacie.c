@@ -182,6 +182,23 @@ void acheterProduit(int quantite, int code)
 
 
 
+void rechercherProduitsCode(int code)
+{
+
+    int s;
+    for (int i = 0; i < nomberDesProduit; i++)
+    {
+        if (Prdt[i].code == code)
+        {
+            printf("\n nom : %s   prix : %f   code: %d   quantite : %d prixTTC : %f   ", Prdt[i].nom, Prdt[i].prix, Prdt[i].code, Prdt[i].quantite, Prdt[i].prixTTC);
+        }
+        else
+            s++;
+    }
+    if (s == nomberDesProduit)
+        printf("ce code ne ce trouve pas donne le stock ? ");
+}
+
 
 void Menu()
 {
