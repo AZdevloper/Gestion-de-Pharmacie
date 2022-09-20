@@ -14,6 +14,26 @@ typedef struct produit
 } produit;
 produit Prdt[100];
 int nomberDesProduit = 0;
+
+void ajouterUnProurduit()
+{
+
+    printf("---------------------\n");
+    printf(" donnez nom de produit :");
+    scanf("   %s", &Prdt[nomberDesProduit].nom);
+
+    printf(" donnez le code de produit (!Unique ) :");
+    scanf("   %d", &Prdt[nomberDesProduit].code);
+
+    printf(" donnez prix de produit :");
+    scanf("   %f", &Prdt[nomberDesProduit].prix);
+    Prdt[nomberDesProduit].prixTTC = Prdt[nomberDesProduit].prix + 0.15 * Prdt[nomberDesProduit].prix;
+
+    printf(" donnez la quantite :");
+    scanf("   %d", &Prdt[nomberDesProduit].quantite);
+
+    nomberDesProduit++;
+}
 void Retour()
 {
     int c;
