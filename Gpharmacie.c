@@ -378,6 +378,19 @@ void statistiqueVente()
         break;
     }
 }
+void MinPrixProduits()
+{
+    int i, min = PrdtAcheter[0].prix;
+    for (int i = 0; i < countPrdtAchter; i++)
+    {
+
+        if (min > PrdtAcheter[i].prix)
+
+            min = PrdtAcheter[i].prix;
+    }
+        printf("max pris des produit est %f DH", min);
+
+}
 
 void Menu()
 {
